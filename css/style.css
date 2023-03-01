@@ -100,6 +100,7 @@ header {
 }
 
 .header {
+  position: relative;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -114,32 +115,32 @@ header {
   color: var(--acent-color);
 }
 
-.underline-navi {
-  content: "";
-}
-
-.underline-navi:hover::after {
-  display: block;
+.header:hover::after,
+.header:focus::after {
   position: absolute;
-  margin-top: 28px;
   content: "";
+  bottom: 0;
+  left: 0;
+  width: 0;
   height: 4px;
-  width: 42px;
+  width: 100%;
   border-radius: 2px;
   background-color: var(--acent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current {
   color: var(--acent-color);
+  position: relative;
 }
 
 .current::after {
   display: block;
   position: absolute;
-  margin-top: 28px;
   content: "";
+  bottom: 0;
   height: 4px;
-  width: 42px;
+  width: 100%;
   border-radius: 2px;
   background-color: var(--acent-color);
 }
@@ -172,6 +173,7 @@ nav {
 .phone:focus {
   fill: var(--acent-color);
   cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail {
@@ -185,6 +187,7 @@ nav {
 .mail:focus {
   fill: var(--acent-color);
   cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-first {
@@ -197,6 +200,7 @@ nav {
 .contact-first:hover,
 .contact-first:focus {
   color: var(--acent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-first-flex {
@@ -257,6 +261,7 @@ nav {
 .button-order:focus {
   background-color: var(--buttons-port-color);
   color: var(--main-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
@@ -337,6 +342,7 @@ nav {
   height: 70px;
   color: var(--secondary-text-color);
   font-weight: 700;
+  font-size: 14px;
   line-height: 1.17;
   z-index: 1;
   bottom: 0;
@@ -415,6 +421,7 @@ nav {
 .circle:focus {
   background-color: var(--acent-color);
   color: var(--secondary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-shadow {
@@ -449,6 +456,7 @@ nav {
 .rectangle:focus {
   color: var(--acent-color);
   outline: transparent;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-style-client {
@@ -462,6 +470,7 @@ nav {
 .icon-style-client:focus {
   fill: var(--acent-color);
   color: var(--ouwer-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 footer {
@@ -507,6 +516,7 @@ footer {
 .contact-second:hover,
 .contact-second:focus {
   color: var(--acent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-wrap-all {
@@ -552,6 +562,7 @@ footer {
 .footer-circle:active,
 .footer-circle:focus {
   background-color: var(--acent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-style {
@@ -582,6 +593,7 @@ footer {
   box-shadow: 0px 2px 2px 0px #0000001f;
   box-shadow: 0px 1px 2px 0px #00000014;
   box-shadow: 0px 3px 1px 0px #0000001a;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-navi-all {
@@ -597,6 +609,7 @@ footer {
   box-shadow: 0px 4px 4px 0px #0000000f;
   box-shadow: 0px 1px 1px 0px #0000001f;
   cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-third-title {
@@ -629,21 +642,6 @@ footer {
   padding: 20px 24px;
 }
 
-.portfolio-block {
-  width: 370px;
-  display: block;
-}
-
-.portfolio-block:hover,
-.portfolio-block:active,
-.portfolio-block:focus,
-.portfolio-block:visited {
-  box-shadow: 1px 4px 6px 0px #00000029;
-  box-shadow: 0px 4px 4px 0px #0000000f;
-  box-shadow: 0px 1px 1px 0px #0000001f;
-  color: var(--logo-color-text);
-}
-
 .backdrop {
   display: flex;
   align-items: center;
@@ -654,6 +652,7 @@ footer {
   width: 100%;
   height: 100%;
   background-color: #00000033;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -704,13 +703,30 @@ footer {
   }
 }
 
+.portfolio-block {
+  width: 370px;
+  display: block;
+}
+
+.portfolio-block:active,
+.portfolio-block:focus,
+.portfolio-block:hover,
+.portfolio-block:visited {
+  box-shadow: 1px 4px 6px 0px #00000029;
+  box-shadow: 0px 4px 4px 0px #0000000f;
+  box-shadow: 0px 1px 1px 0px #0000001f;
+  color: var(--logo-color-text);
+}
+
 .portfolio-fill {
   position: relative;
   overflow: hidden;
 }
 
 .portfolio-fill:hover .portfolio-overlay {
-  transform: translateY(0%);
+  transform: translateY(-27%);
+  padding-top: 63px;
+  padding-left: 24px;
 }
 
 .portfolio-overlay {
